@@ -89,13 +89,13 @@
         console.log('Applying saved consent:', consent);
         gtag('consent', 'update', consent);
         loadGTM();
-
         if (typeof window.addConsentListenerExample === 'function') {
           window.addConsentListenerExample(consent);
         }
       } else {
         console.warn('No saved consent found. Setting default consent.');
         setDefaultConsent();
+        loadGTM(); // <--- Added this call here to always load GTM even if no consent saved
       }
     });
 
