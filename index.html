@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Calculator</title>
+  <title>Calculator (Test Version)</title>
 
-  <!-- Google Tag Manager Script -->
+  <!-- Google Tag Manager Script with Consent Integration -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag() { window.dataLayer.push(arguments); }
@@ -74,6 +74,12 @@
       gtag('consent', 'update', consent);
       saveConsent(consent);
       loadGTM();
+
+      if (typeof window.addConsentListenerExample === 'function') {
+        window.addConsentListenerExample(consent);
+      } else {
+        console.warn('Consent listener not available yet.');
+      }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
@@ -82,6 +88,10 @@
         console.log('Applying saved consent:', consent);
         gtag('consent', 'update', consent);
         loadGTM();
+
+        if (typeof window.addConsentListenerExample === 'function') {
+          window.addConsentListenerExample(consent);
+        }
       } else {
         console.warn('No saved consent found. Setting default consent.');
         setDefaultConsent();
@@ -140,20 +150,20 @@
       observer.observe(document.body, { childList: true, subtree: true });
     });
   </script>
-  
+
   <!-- SEO Meta Tags -->
   <meta name="description" content="A simple and advanced calculator app for everyday use. Supports dark mode and responsive layout." />
   <meta name="keywords" content="calculator, simple calculator, advanced calculator, online calculator, dark mode" />
   <meta name="author" content="Mutlu Renegado" />
-  <meta name="robots" content="index, follow" />
-  
+  <meta name="robots" content="noindex, nofollow" />
+
   <!-- Open Graph Meta Tags -->
-  <meta property="og:title" content="Simple Calculator" />
-  <meta property="og:description" content="A simple and advanced calculator app for everyday use, featuring dark mode and a responsive design." />
+  <meta property="og:title" content="Simple Calculator (Test)" />
+  <meta property="og:description" content="Test version of the calculator app, featuring dark mode and a responsive design." />
   <meta property="og:image" content="URL_TO_IMAGE_THUMBNAIL" />
-  <meta property="og:url" content="https://mutlurenegado.github.io/Calculator/" />
+  <meta property="og:url" content="https://mutlurenegado.github.io/Calculator/test/" />
   <meta property="og:type" content="website" />
-  
+
   <!-- External Stylesheets -->
   <link rel="stylesheet" href="calculator.css" />
 </head>
@@ -181,7 +191,7 @@
   <!-- Footer Section -->
   <footer>
     <div class="calculator-toggle">
-      <button onclick="window.location.href='index.html'">Simple Calculator</button>
+      <button onclick="window.location.href='../index.html'">Simple Calculator</button>
       <button onclick="window.location.href='advanced/advanced.html'">Advanced Calculator</button>
     </div>
   </footer>
