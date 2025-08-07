@@ -1,1 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Converter</title>
+  <link rel="stylesheet" href="converter.css" />
+</head>
+<body>
+  <h1>Unit Converter</h1>
+  <div>
+    <label for="unit">Select Unit:</label>
+    <select id="unit" onchange="showConversionOptions()">
+      <option value="length">Length</option>
+      <option value="temperature">Temperature</option>
+      <option value="currency">Currency</option>
+    </select>
+  </div>
+  <div id="conversionArea"></div>
+  <script src="converter.js"></script>
+</body>
+</html>
 
